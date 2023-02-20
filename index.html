@@ -77,7 +77,7 @@
   </head>
   <body>
     <h1>
-      <span class="emoji">🌤</span>
+      🌤
       <br />
       Currently 21° in Tokyo
     </h1>
@@ -100,18 +100,39 @@
     <button>Change city</button>
     <p>Coded by Matt Delac</p>
     <script>
-      let city = prompt("What City?");
-      let temperature = prompt("What is the temperature?");
+      function changeWeather() {
+        let city = prompt("What City?");
+        let temperature = prompt("What is the temperature?");
 
-      if (temperature < 0) {
-        let emoji = document.querySelector(".emoji");
-        emoji.innerHTML =
-      } else {
-        change emoji to a frowny face
+        if (temperature < 0) {
+          let h1 = document.querySelector("h1");
+          h1.innerHTML =
+            "😦 <br>" +
+            "Currently " +
+            " " +
+            temperature +
+            "<span>&#176;</span>" +
+            " " +
+            "in" +
+            " " +
+            city;
+        } else {
+          let h1 = document.querySelector("h1");
+          h1.innerHTML =
+            "😃 <br>" +
+            "Currently" +
+            " " +
+            temperature +
+            "<span>&#176;</span> " +
+            " " +
+            "in" +
+            " " +
+            city;
+        }
       }
 
-      let changeButton = document.querySelectorAll("button");
-      changeButton.addEventListener("click", run function);
+      let changeButton = document.querySelector("button");
+      changeButton.addEventListener("click", changeWeather);
     </script>
   </body>
 </html>
